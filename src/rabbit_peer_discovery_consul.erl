@@ -386,7 +386,6 @@ service_address(_, true, "undefined", FromNodename) ->
 service_address(Value, false, "undefined", _) ->
   Value;
 service_address(_, true, NIC, _) ->
-  %% TODO: support IPv6
   {ok, Addr} = rabbit_peer_discovery_util:nic_ipv4(NIC),
   Addr;
 %% this combination makes no sense but this is what rabbitmq-autocluster
